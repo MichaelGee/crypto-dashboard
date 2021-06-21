@@ -45,7 +45,9 @@ const colors = {
   darkBlue: "#1F263E",
   red: "#E60023",
   white: "hsl(0, 0%, 100%)",
-  button: '#e3f2fd'
+  button: "#e3f2fd",
+  green: "#01C0AA",
+  red: "#EE2E6B"
 };
 
 const space = {

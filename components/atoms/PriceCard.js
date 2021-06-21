@@ -8,6 +8,8 @@ const Container = styled.div`
  padding: 1rem;
  border-radius: 6px;
  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0, 3%);
+ max-width: 20rem;
+ width: 100%;
 }
 
 
@@ -21,21 +23,21 @@ const Left = styled.div`
   display: flex;
 `;
 const Icon = styled.img`
-  width: 15%;
+  width: 18%;
 `;
 const CoinName = styled.p`
   margin-left: 1rem;
 `;
 const Coin = styled.p`
-  font-size: ${({ theme }) => theme.font.size.tiny};
+  font-size: ${({ theme }) => theme.font.size.tiniest};
   opacity: 0.5;
 `;
 const Currency = styled.p`
-  font-size: ${({ theme }) => theme.font.size.small};
+  font-size: ${({ theme }) => theme.font.size.tiniest};
 `;
 const Price = styled.p`
   text-align: center;
-  font-size: ${({ theme }) => theme.font.size.big};
+  font-size: ${({ theme }) => theme.font.size.normal};
   opacity: 0.7;
   font-weight: ${({ theme }) => theme.font.weight.light};
 `;
@@ -47,7 +49,8 @@ const Right = styled.div`
 const Percentage = styled.p`
   margin-right: 0.5rem;
   font-weight: ${({ theme }) => theme.font.weight.thin};
-  font-size: ${({ theme }) => theme.font.size.tiny};
+  font-size: ${({ theme }) => theme.font.size.tiniest};
+  color: ${({ theme }) => theme.colors.green};
 `;
 const Arrow = styled.img``;
 
@@ -64,7 +67,7 @@ export const PriceCard = (props) => {
           </CoinName>
         </Left>
         <Right>
-          <Percentage>{price_change_pct}%</Percentage>
+          <Percentage>+{price_change_pct}%</Percentage>
           <UpIcon />
         </Right>
       </Top>
