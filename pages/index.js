@@ -15,20 +15,9 @@ const fetchData = async () => {
 };
 
 export default function Home() {
-  const { data, status } = useQuery("crypto-data", fetchData);
-
-  // const getData = async()=>{
-  //   try{
-  //    const res = await getCurrencyTicker('BTC');
-  //    console.log(res.data);
-  //   }catch(e){
-  //     console.log(e)
-  //   }
-  // }
-  // useEffect(()=>{
-  //   getData();
-  // },[])
-
+  const { data, status } = useQuery("crypto-data", fetchData, {
+    staleTime: 5000,
+  });
   return (
     <div className={styles.container}>
       <Head>
