@@ -47,17 +47,24 @@ const Right = styled.div`
   align-items: center;
   jusify-content: center;
 `;
-const Percentage = styled.p`
+const GreenPercentage = styled.p`
   margin-right: 0.5rem;
   font-weight: ${({ theme }) => theme.font.weight.thin};
   font-size: ${({ theme }) => theme.font.size.tiny};
   color: ${({ theme }) => theme.colors.green};
+`;
+const RedPercentage = styled.p`
+  margin-right: 0.5rem;
+  font-weight: ${({ theme }) => theme.font.weight.thin};
+  font-size: ${({ theme }) => theme.font.size.tiny};
+  color: ${({ theme }) => theme.colors.red};
 `;
 const Arrow = styled.img``;
 
 export const PriceCard = ({item}) => {
   const { logo_url, currency, name, price} = item;
   const roundedPrice = parseFloat(price).toFixed(4);
+  const percentage = item["1h"]?.price_change_pct;
   return (
     <Container>
       <Top>
@@ -69,8 +76,9 @@ export const PriceCard = ({item}) => {
           </CoinName>
         </Left>
         <Right>
-          <Percentage>{item["1h"]?.price_change_pct}%</Percentage>
-          <UpIcon />
+          {percentage < 0 ? <RedPercentage>{percentage}%</RedPercentage> : <GreenPercentage>{percentage}%</GreenPercentage>}
+          {percentage < 0 ? <DownIcon /> : <UpIcon />}
+          
         </Right>
       </Top>
       <Price>${roundedPrice}</Price>

@@ -16,7 +16,8 @@ const fetchData = async () => {
 
 export default function Home() {
   const { data, status } = useQuery("crypto-data", fetchData, {
-    staleTime: 5000,
+    staleTime: 2000,
+    refetchInterval: 10000,
   });
   return (
     <div className={styles.container}>
