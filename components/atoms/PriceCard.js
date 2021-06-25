@@ -23,17 +23,18 @@ const Left = styled.div`
   display: flex;
 `;
 const Icon = styled.img`
-  width: 18%;
+  width: 23%;
+  height: 23%;
 `;
 const CoinName = styled.p`
   margin-left: 1rem;
 `;
 const Coin = styled.p`
-  font-size: ${({ theme }) => theme.font.size.tiniest};
+  font-size: ${({ theme }) => theme.font.size.tiny};
   opacity: 0.5;
 `;
 const Currency = styled.p`
-  font-size: ${({ theme }) => theme.font.size.tiniest};
+  font-size: ${({ theme }) => theme.font.size.tiny};
 `;
 const Price = styled.p`
   text-align: center;
@@ -49,13 +50,14 @@ const Right = styled.div`
 const Percentage = styled.p`
   margin-right: 0.5rem;
   font-weight: ${({ theme }) => theme.font.weight.thin};
-  font-size: ${({ theme }) => theme.font.size.tiniest};
+  font-size: ${({ theme }) => theme.font.size.tiny};
   color: ${({ theme }) => theme.colors.green};
 `;
 const Arrow = styled.img``;
 
-export const PriceCard = (props) => {
-  const { logo_url, currency, name, price, price_change_pct } = props;
+export const PriceCard = ({item}) => {
+  const { logo_url, currency, name, price} = item;
+  const roundedPrice = parseFloat(price).toFixed(4);
   return (
     <Container>
       <Top>
@@ -67,11 +69,11 @@ export const PriceCard = (props) => {
           </CoinName>
         </Left>
         <Right>
-          <Percentage>+{price_change_pct}%</Percentage>
+          <Percentage>{item["1h"]?.price_change_pct}%</Percentage>
           <UpIcon />
         </Right>
       </Top>
-      <Price>${price}</Price>
+      <Price>${roundedPrice}</Price>
     </Container>
   );
 };
@@ -81,7 +83,7 @@ PriceCard.propTypes = {
   currency: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  price_change_pct: PropTypes.number.isRequired,
+  price_change_pct: PropTypes.string.isRequired,
 };
 
 PriceCard.defaultProps = {
