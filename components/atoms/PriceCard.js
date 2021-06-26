@@ -65,6 +65,7 @@ export const PriceCard = ({item}) => {
   const { logo_url, currency, name, price} = item;
   const roundedPrice = parseFloat(price).toFixed(4);
   const percentage = item["1h"]?.price_change_pct;
+  const fixedPercentage = parseFloat(percentage).toFixed(2);
   return (
     <Container>
       <Top>
@@ -76,9 +77,8 @@ export const PriceCard = ({item}) => {
           </CoinName>
         </Left>
         <Right>
-          {percentage < 0 ? <RedPercentage>{percentage}%</RedPercentage> : <GreenPercentage>{percentage}%</GreenPercentage>}
-          {percentage < 0 ? <DownIcon /> : <UpIcon />}
-          
+          {percentage < 0 ? <RedPercentage>{fixedPercentage}%</RedPercentage> : <GreenPercentage>{fixedPercentage}%</GreenPercentage>}
+          {percentage < 0 ? <DownIcon /> : <UpIcon />} 
         </Right>
       </Top>
       <Price>${roundedPrice}</Price>

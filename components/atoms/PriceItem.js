@@ -11,6 +11,10 @@ const Container = styled.div`
   width: 100%;
   border: 1px solid #dfe5f9;
   padding: 1rem;
+  cursor :pointer;
+  &:hover{
+    background: #DFE5F966;
+  }
 `;
 
 const Left = styled.div`
@@ -32,7 +36,13 @@ const Right = styled.div`
   align-items: center;
   jusify-content: space-between;
 `;
-const Percentage = styled.p`
+const GreenPercentage = styled.p`
+  margin-right: 0.5rem;
+  font-weight: ${({ theme }) => theme.font.weight.thin};
+  font-size: ${({ theme }) => theme.font.size.tiny};
+  color: ${({ theme }) => theme.colors.green};
+`;
+const RedPercentage = styled.p`
   margin-right: 0.5rem;
   font-weight: ${({ theme }) => theme.font.weight.thin};
   font-size: ${({ theme }) => theme.font.size.tiny};
@@ -47,7 +57,15 @@ const Price = styled.p`
 `;
 
 export const PriceItem = ({ item }) => {
-  const { logo_url, currency, price, price_change_pct } = item;
+  const { logo_url, currency, price } = item;
+
+  //Format number to currency
+  const formatter = new Intl.NumberFormat('en-US', {
+    currency: 'USD',
+  });
+  const roundedPrice = formatter.format(parseFloat(price).toFixed(4));
+  const percentage = item["1h"]?.price_change_pct;
+  const fixedPercentage = parseFloat(percentage).toFixed(2);
 
   return (
     <Container>
@@ -56,9 +74,13 @@ export const PriceItem = ({ item }) => {
         <Currency>{currency}</Currency>
       </Left>
       <Right>
-        <Price>${price}</Price>
-        <Percentage>-{price_change_pct}%</Percentage>
-        <DownIcon />
+        <Price>${roundedPrice}</Price>
+        {percentage < 0 ? (
+          <RedPercentage>{fixedPercentage}%</RedPercentage>
+        ) : (
+          <GreenPercentage>{fixedPercentage}%</GreenPercentage>
+        )}
+        {percentage < 0 ? <DownIcon /> : <UpIcon />}
       </Right>
     </Container>
   );
