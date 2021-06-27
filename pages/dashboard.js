@@ -20,15 +20,15 @@ const fetchTickerData = async () => {
 
 
 export default function Home() {
-  const [name, setName] = useState('bitcoin cash')
+  const [name, setName] = useState('ethereum')
   const { data, status } = useQuery("crypto-data", fetchTickerData, {
     staleTime: 2000,
     // refetchInterval: 10000,
   });
  
-  // useEffect(() => {
-  //   setName(name.replace(/ /g, '-'));
-  // }, [])
+  useEffect(() => {
+    setName(name.replace(/ /g, '-'));
+  }, [])
 
   
   // console.log(tickerdata); 
@@ -41,7 +41,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      {/* <Chart name={name}/> */}
+      <Chart name={name}/>
      
       {/* {status === 'loading' ? (<div className={styles.container}><Spinner width= '3rem'/></div>) : <>
         {data &&
