@@ -5,10 +5,10 @@ import UpIcon from "../icons/Up";
 
 const Container = styled.div`
  background: #fff;
- padding: 1rem;
+ padding: 1.3rem 1.5rem;
  border-radius: 6px;
- box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0, 3%);
- max-width: 20rem;
+ box-shadow: 0 3px 6px rgba(0,0,0,0.11), 0 3px 6px rgba(0,0,0, 3%);
+ min-width: 20rem;
  width: 100%;
 }
 
@@ -40,7 +40,7 @@ const Price = styled.p`
   text-align: center;
   font-size: ${({ theme }) => theme.font.size.normal};
   opacity: 0.7;
-  font-weight: ${({ theme }) => theme.font.weight.light};
+  font-weight: ${({ theme }) => theme.font.weight.large};
 `;
 const Right = styled.div`
   display: flex;

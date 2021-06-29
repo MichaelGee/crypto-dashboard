@@ -35,6 +35,7 @@ const font = {
     bolder: 800,
     light: 200,
     normal: 300,
+    large: 500,
     thin: 100,
   },
 };
