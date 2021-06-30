@@ -63,6 +63,7 @@ const Arrow = styled.img``;
 
 export const PriceCard = ({item}) => {
   const { logo_url, currency, name, price} = item;
+
   //Format number to currency
   const formatter = new Intl.NumberFormat('en-US', {
     currency: 'USD',
@@ -70,8 +71,12 @@ export const PriceCard = ({item}) => {
   const roundedPrice = formatter.format(parseFloat(price).toFixed(4));
   const percentage = item["1h"]?.price_change_pct;
   const fixedPercentage = parseFloat(percentage).toFixed(2);
+
+  
+
+  
   return (
-    <Container>
+    <Container >
       <Top>
         <Left>
           <Icon src={logo_url} />

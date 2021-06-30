@@ -11,6 +11,14 @@ import { Spinner } from "../components/atoms/Spinner";
 import {Chart} from "../components/organism/Chart";
 import Carousel from "../components/molecules/Carousel";
 import { Slider } from "../components/organism/Slider";
+import { MarketList } from "../components/organism/MarketList";
+import { DataSection } from "../components/organism/DataSection";
+import styled from '@emotion/styled'
+
+
+const PageWrapper = styled.div`
+ padding: 3rem;
+`
 
 const fetchTickerData = async () => {
   // const res = await getCurrencyTicker();
@@ -22,36 +30,22 @@ const fetchTickerData = async () => {
 
 
 export default function Home() {
-  const [name, setName] = useState('ethereum')
-  
- 
-  useEffect(() => {
-    setName(name.replace(/ /g, '-'));
-  }, [])
 
   
   // console.log(tickerdata); 
 
   
   return (
-    <>
+    <PageWrapper>
       <Head>
         <title>Cryptocurrency Dashboard</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
+      
        <Slider/>
-      {/* <Chart name={name}/> */}
-     
-      {/* {status === 'loading' ? (<div className={styles.container}><Spinner width= '3rem'/></div>) : <>
-        {data &&
-          data.map((data) => (
-            <>
-              <PriceCard item={data} key={uuidv4()} /> 
-               <PriceItem item={data} key={uuidv4()}/>
-            </>
-          ))}
-      </>} */}
-    </>
+      
+     <DataSection/>
+    </PageWrapper>
   );
 }
