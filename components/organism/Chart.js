@@ -15,7 +15,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import moment from "moment";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect} from "react";
 import { CoinContext } from "../../context/CoinContext";
 
 
@@ -30,11 +30,9 @@ const fetchHistory = async (coinName) => {
 export const Chart = () => {
   
   const [coinName, setCoinName] = useContext(CoinContext);
-  
+  console.log(coinName);
 
-  useEffect(() => {
-    setCoinName(coinName.replace(/ /g, '-'));
-  }, [])  
+    
 
   const { data, status } = useQuery(
     ["history-data", coinName],

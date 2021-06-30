@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import DownIcon from "../icons/Down";
 import UpIcon from "../icons/Up";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { CoinContext } from "../../context/CoinContext";
 
 
@@ -61,8 +61,13 @@ const Price = styled.p`
 `;
 
 export const PriceItem = ({ item }) => {
-  const { logo_url, currency, price } = item;
-  // const [coinName, setCoinName] = useContext(CoinContext);
+  const { logo_url, currency, price, name } = item;
+
+  const [coinName, setCoinName] = useContext(CoinContext);
+
+
+
+
   //Format number to currency
   const formatter = new Intl.NumberFormat('en-US', {
     currency: 'USD',
@@ -72,7 +77,7 @@ export const PriceItem = ({ item }) => {
   const fixedPercentage = parseFloat(percentage).toFixed(2);
 
   return (
-    <Container >
+    <Container onClick={() => setCoinName(name.toLowerCase().replace(/ /g, '-'))}>
       <Left>
         <Icon src={logo_url} />
         <Currency>{currency}</Currency>

@@ -20,19 +20,9 @@ const PageWrapper = styled.div`
  padding: 3rem;
 `
 
-const fetchTickerData = async () => {
-  // const res = await getCurrencyTicker();
-  // if (res.status === 200 || res.status === 201) {
-  //   return res.data;
-  // }
-  
-};
-
 
 export default function Home() {
 
-  
-  // console.log(tickerdata); 
 
   
   return (

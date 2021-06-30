@@ -6,7 +6,6 @@ import { LeftButton } from "../atoms/LeftButton";
 import { RightButton } from "../atoms/RightButton";
 import { useQuery } from "react-query";
 import {PriceCard } from "../atoms/PriceCard"
-import {Spinner} from '../atoms/Spinner';
 import styles from "../../styles/Home.module.css";
 import {getCurrencyTicker} from '../../services/api';
 import { v4 as uuidv4 } from "uuid";
@@ -43,11 +42,6 @@ export const Slider = () => {
         <RightButton onClick={() => sliderRef.current.rightScroll()} />
       </Box>
       <Carousel ref={sliderRef}>
-        {status === "loading" ? (
-          <div className={styles.container}>
-            <Spinner width="3rem" />
-          </div>
-        ) : (
           <Box display='flex'>
             {data &&
               data.map((data) => (
@@ -56,7 +50,6 @@ export const Slider = () => {
                 </Box>
               ))}
           </Box>
-        )}
       </Carousel>
     </Container>
   );

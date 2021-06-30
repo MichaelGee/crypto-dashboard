@@ -12,7 +12,7 @@ const coinGekoApi = axios.create({
 });
 
 const key = process.env.NEXT_PUBLIC_API_KEY;
-const currencies = "BTC,ETH,XRP,BNB,DOGE,BCH,LCT,XLM,EOS,ADA,DASH,XTZ,SOL,TRX,XMR,BSV,DOT,USDT,DAI,NEO,HT,GRT,WAVES,CEL,ZEC,BTG,CELO,STX";
+const currencies = "BTC,ETH,XRP,DOGE,BCH,LCT,XLM,EOS,ADA,DASH,XTZ,SOL,TRX,XMR,BSV,DOT,USDT,DAI,NEO,HT,GRT,WAVES,CEL,ZEC,BTG,CELO,STX";
 const extraParams = "interval=1h&per-page=100&page=1"
 
 // const getCurrency = () => api.get(`currencies`);
