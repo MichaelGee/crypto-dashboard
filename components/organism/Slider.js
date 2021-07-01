@@ -26,13 +26,14 @@ const Container = styled(Box)`
 `;
 
 export const Slider = () => {
+  const sliderRef = useRef();
   
   const { data, status } = useQuery("crypto-data", fetchTickerData, {
     staleTime: 2000,
     // refetchInterval: 10000,
   });
 
-  const sliderRef = useRef();
+  
 
 
   return (

@@ -22,7 +22,7 @@ const fetchTickerData = async () => {
 export const MarketList = () => {
   const { data, status } = useQuery("crypto-data", fetchTickerData, {
     staleTime: 2000,
-    // refetchInterval: 10000,
+    refetchInterval: 10000,
   });
 
   

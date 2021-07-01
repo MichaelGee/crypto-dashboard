@@ -1,28 +1,22 @@
 import Head from "next/head";
-import {useState, useEffect, useRef} from 'react'
-import styles from "../styles/Home.module.css";
-import { getCurrencyTicker } from "../services/api";
-import { PriceCard } from "../components/atoms/PriceCard";
-import { PriceItem } from "../components/atoms/PriceItem";
-import { Flex, Box } from "rebass";
-import { v4 as uuidv4 } from "uuid";
-import { useQuery } from "react-query";
-import { Spinner } from "../components/atoms/Spinner";
-import {Chart} from "../components/organism/Chart";
-import Carousel from "../components/molecules/Carousel";
 import { Slider } from "../components/organism/Slider";
-import { MarketList } from "../components/organism/MarketList";
 import { DataSection } from "../components/organism/DataSection";
 import styled from '@emotion/styled'
-
+import {CoinContext} from "../context/CoinContext";
+import {useContext} from 'react'
 
 const PageWrapper = styled.div`
  padding: 3rem;
 `
-
+const CoinTitle = styled.h1`
+  font-size: ${({ theme }) => theme.font.size.big};
+  text-transform: uppercase;
+  margin: 2rem 0;
+  opacity: 0.7;
+`
 
 export default function Home() {
-
+  const [coinName, setCoinName] = useContext(CoinContext);
 
   
   return (
@@ -34,7 +28,7 @@ export default function Home() {
       
       
        <Slider/>
-      
+       <CoinTitle>{coinName}</CoinTitle>
      <DataSection/>
     </PageWrapper>
   );

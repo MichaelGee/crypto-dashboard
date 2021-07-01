@@ -30,7 +30,6 @@ const fetchHistory = async (coinName) => {
 export const Chart = () => {
   
   const [coinName, setCoinName] = useContext(CoinContext);
-  console.log(coinName);
 
     
 
@@ -39,6 +38,7 @@ export const Chart = () => {
     () => fetchHistory(coinName),
     {
       staleTime: 2000,
+      refetchInterval: 10000,
     }
   );
 

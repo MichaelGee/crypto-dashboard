@@ -156,6 +156,7 @@ const globalStyle = css`
     line-height: 1.4;
     scroll-behavior: smooth;
     -webkit-scroll-behavior: smooth;
+    background: #F3F6FE;
     // color: #495057;
   }
 
