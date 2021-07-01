@@ -1,11 +1,3 @@
-// import '../styles/globals.css'
-
-// function MyApp({ Component, pageProps }) {
-//   return <Component {...pageProps} />
-// }
-
-// export default MyApp
-
 import { Global } from "@emotion/react";
 import { ThemeProvider } from "../context/ThemeContext";
 import { CoinProvider } from "../context/CoinContext";
