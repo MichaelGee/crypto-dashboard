@@ -51,7 +51,7 @@ export const Chart = () => {
 
   const mappedData = data?.prices?.slice(0, 288).map((data) => {
     return {
-      date: moment(data?.[0]).format("HH:mm"),
+      date: moment(data?.[0]).format("L"),
       //  amount: formatter.format(parseFloat(data?.[1]).toFixed(4))
       amount: data?.[1],
     };

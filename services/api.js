@@ -20,7 +20,7 @@ export const getCurrencyTicker = () => nomicsApi.get(`currencies/ticker?key=${ke
 export const getHistoricData =(id)=> coinGekoApi.get(`/${id}/market_chart/`, {
   params: {
     vs_currency: 'usd',
-    days: '1'
+    days: '7'
   }
 })
 

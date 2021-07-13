@@ -38,10 +38,10 @@ export const Slider = () => {
 
   return (
     <Container>
-      <Box display="flex">
+      {/* <Box display="flex">
         <LeftButton onClick={() => sliderRef.current.leftScroll()} />
         <RightButton onClick={() => sliderRef.current.rightScroll()} />
-      </Box>
+      </Box> */}
       <Carousel ref={sliderRef}>
           <Box display='flex'>
             {data &&
