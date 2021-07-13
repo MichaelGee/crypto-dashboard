@@ -1,73 +1,73 @@
-import NunitoSansBlack from './public/assets/fonts/NunitoSans-Black.ttf';
-import NunitoSansBold from './public/assets/fonts/NunitoSans-Bold.ttf';
-import NunitoSansExtraBold from './public/assets/fonts/NunitoSans-ExtraBold.ttf';
-import NunitoSansExtraBoldITalic from './public/assets/fonts/NunitoSans-ExtraBoldItalic.ttf';
-import NunitoSansExtraLight from './public/assets/fonts/NunitoSans-ExtraLight.ttf';
-import NunitoSansItalic from './public/assets/fonts/NunitoSans-Italic.ttf';
-import NunitoSansLight from './public/assets/fonts/NunitoSans-ExtraLight.ttf';
-import NunitoSansRegular from './public/assets/fonts/NunitoSans-Regular.ttf';
-import NunitoSansSemiBold from './public/assets/fonts/NunitoSans-SemiBold.ttf';
+import MulishBlack from './public/assets/fonts/Mulish-Black.ttf';
+import MulishBold from './public/assets/fonts/Mulish-Bold.ttf';
+import MulishExtraBold from './public/assets/fonts/Mulish-ExtraBold.ttf';
+import MulishExtraBoldITalic from './public/assets/fonts/Mulish-ExtraBoldItalic.ttf';
+import MulishExtraLight from './public/assets/fonts/Mulish-ExtraLight.ttf';
+import MulishItalic from './public/assets/fonts/Mulish-Italic.ttf';
+import MulishLight from './public/assets/fonts/Mulish-ExtraLight.ttf';
+import MulishRegular from './public/assets/fonts/Mulish-Regular.ttf';
+import MulishSemiBold from './public/assets/fonts/Mulish-SemiBold.ttf';
 import {css} from '@emotion/react';
 
 const globalStyle = css`
   @font-face {
-    font-family: 'NunitoSans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 300;
-    src: url(${NunitoSansBlack}) format('truetype');
+    src: url(${MulishBlack}) format('truetype');
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'NunitoSans', sans-serif;
-    src: url(${NunitoSansBold}) format('truetype');
+    font-family: 'Mulish', sans-serif;
+    src: url(${MulishBold}) format('truetype');
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'NunitoSans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 500;
-    src: url(${NunitoSansExtraBold}) format('truetype');
+    src: url(${MulishExtraBold}) format('truetype');
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'NunitoSans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 700;
-    src: url(${NunitoSansLight}) format('truetype');
+    src: url(${MulishLight}) format('truetype');
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'NunitoSans', sans-serif;
-    src: url(${NunitoSansExtraLight}) format('truetype');
+    font-family: 'Mulish', sans-serif;
+    src: url(${MulishExtraLight}) format('truetype');
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'NunitoSans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 500;
-    src: url(${NunitoSansExtraBoldITalic}) format('truetype');
+    src: url(${MulishExtraBoldITalic}) format('truetype');
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'NunitoSans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 700;
-    src: url(${NunitoSansRegular}) format('truetype');
+    src: url(${MulishRegular}) format('truetype');
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'NunitoSans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 700;
-    src: url(${NunitoSansSemiBold}) format('truetype');
+    src: url(${MulishSemiBold}) format('truetype');
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'NunitoSans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 700;
-    src: url(${NunitoSansItalic}) format('truetype');
+    src: url(${MulishItalic}) format('truetype');
     font-display: swap;
   }
 
@@ -151,7 +151,7 @@ const globalStyle = css`
   }
 
   body {
-    font-family: 'NunitoSans', sans-serif;;
+    font-family: 'Mulish', sans-serif;;
     font-size: 1.6rem;
     line-height: 1.4;
     scroll-behavior: smooth;

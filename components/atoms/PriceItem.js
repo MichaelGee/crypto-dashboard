@@ -4,6 +4,8 @@ import DownIcon from "../icons/Down";
 import UpIcon from "../icons/Up";
 import { useContext} from "react";
 import { CoinContext } from "../../context/CoinContext";
+import { PriceContext } from "../../context/PriceContext";
+import { IconContext } from "../../context/IconContext";
 
 
 
@@ -64,9 +66,8 @@ export const PriceItem = ({ item }) => {
   const { logo_url, currency, price, name } = item;
 
   const [coinName, setCoinName] = useContext(CoinContext);
-
-
-
+  const [coinPrice, setCoinPrice] = useContext(PriceContext);
+  const [icon, setIcon] = useContext(IconContext);
 
   //Format number to currency
   const formatter = new Intl.NumberFormat('en-US', {
@@ -76,8 +77,14 @@ export const PriceItem = ({ item }) => {
   const percentage = item["1h"]?.price_change_pct;
   const fixedPercentage = parseFloat(percentage).toFixed(2);
 
+  const setContextData =()=>{
+    setCoinName(name.toLowerCase().replace(/ /g, '-'));
+    setCoinPrice(roundedPrice);
+    setIcon(logo_url);
+   }
+
   return (
-    <Container onClick={() => setCoinName(name.toLowerCase().replace(/ /g, '-'))}>
+    <Container onClick={setContextData}>
       <Left>
         <Icon src={logo_url} />
         <Currency>{currency}</Currency>
