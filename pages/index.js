@@ -30,6 +30,7 @@ export default function Home() {
        <Slider/>
        <CoinTitle>{coinName}</CoinTitle>
      <DataSection/>
+     <a href='https://nomics.com/' target='_blank'>Crypto Market Cap & Pricing Data Provided By Nomics.</a>
     </PageWrapper>
   );
 }
